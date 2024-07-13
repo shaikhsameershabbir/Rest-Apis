@@ -6,4 +6,6 @@ Setup
 1. npm init 
 2. npm i -D typescript ts-node nodemon @types/node
 3. npx tsc --init #create ts.config file 
-4.
+4. esLint
+5. Express js install 
+6. npm i -D @types/express   #type Defination for express for ts 
