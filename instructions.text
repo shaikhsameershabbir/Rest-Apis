@@ -9,3 +9,5 @@ Setup
 4. esLint
 5. Express js install 
 6. npm i -D @types/express   #type Defination for express for ts 
+7. npm i dotenv packge to expo
+8. npm i -D @types/dotenv
