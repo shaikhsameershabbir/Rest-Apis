@@ -4,10 +4,7 @@
   "description": "REST api for e-book",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.ts",
-     "clean": "rm -rf dist",    // Example clean command for Unix-based systems
-    "build": "tsc",            // Example TypeScript build command
-    "start": "node dist/index.js"  // Example command to start your Node.js application
+    "dev": "nodemon server.ts"
   },
   "keywords": [
     "api",
@@ -28,7 +25,7 @@
     "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "eslint": "^9.7.0",
+    "eslint": "^8.56.0",
     "globals": "^15.8.0",
     "mongoose": "^8.5.1",
     "nodemon": "^3.1.4",
