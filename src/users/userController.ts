@@ -2,6 +2,7 @@ import { error } from 'console'
 import express, { NextFunction, Request, Response } from 'express'
 import createHttpError from 'http-errors'
 import userModal from './userModal'
+import bcrypt from 'bcrypt'
 
 
 // User controller 
@@ -17,7 +18,11 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
     if (user) {
         const error = createHttpError(400, "User Already exist with this username ")
     }
-
+    // hashing password 
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = userModal.create({
+        name, email, password: hashedPassword
+    })
 
     res.json({ name, email, password })
 }
