@@ -33,7 +33,6 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
         next(createHttpError(500, 'error while Creating user  '))
     }
 }
-
 // User login controller 
 const loginUser = async (req: Request, res: Response, next: NextFunction) => {
 
@@ -47,16 +46,13 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
             return next(createHttpError(404, "User  not found "))
         }
         console.log('user');
-
         const isMatch = await bcrypt.compare(password, user.password)
         console.log('isMatch', isMatch);
-
         if (!isMatch) {
             return next(createHttpError(400, "Invalid username or password "))
         }
         const token = sign({ sub: user._id }, config.jwtSecret as string, { expiresIn: '7d' });
         res.status(200).json({ accessTokenss: token })
-
     } catch (error) {
         next(createHttpError(500, 'Error While login '))
     }
