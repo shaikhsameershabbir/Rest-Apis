@@ -7,11 +7,9 @@ import userRouter from './src/users/userRouter';
 const app = express();
 
 app.get('/', (req, res, next) => {
-
     res.json({ msg: "AAAgaya bhai" });
-
 });
-
+app.use(express.json())
 app.use('/api/users/', userRouter)
 
 
